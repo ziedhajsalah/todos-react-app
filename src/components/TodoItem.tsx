@@ -1,3 +1,4 @@
+import { useState } from "react";
 import image from "../delete.svg";
 
 export function TodoItem({
@@ -11,8 +12,18 @@ export function TodoItem({
   toggleTodo: () => void;
   deleteTodo: () => void;
 }): JSX.Element {
+  const [showDeleteButton, setShowDeleteButton] = useState<boolean>(false);
+
   return (
-    <div className="todo-item">
+    <div
+      className="todo-item"
+      onMouseEnter={() => {
+        setShowDeleteButton(true);
+      }}
+      onMouseLeave={() => {
+        setShowDeleteButton(false);
+      }}
+    >
       <input
         type="checkbox"
         checked={checked}
@@ -21,13 +32,15 @@ export function TodoItem({
         }}
       />
       <div>{title}</div>
-      <img
-        src={image}
-        alt=""
-        onClick={() => {
-          deleteTodo();
-        }}
-      />
+      {showDeleteButton && (
+        <img
+          src={image}
+          alt=""
+          onClick={() => {
+            deleteTodo();
+          }}
+        />
+      )}
     </div>
   );
 }
