@@ -1,5 +1,6 @@
 import { useState } from "react";
 import image from "../delete.svg";
+import { Input } from "./Input";
 
 export function TodoItem({
   title,
@@ -24,7 +25,7 @@ export function TodoItem({
         setShowDeleteButton(false);
       }}
     >
-      <input
+      <Input
         type="checkbox"
         checked={checked}
         onChange={() => {
