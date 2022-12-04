@@ -49,9 +49,9 @@ export async function completeTodo(id: number) {
   return response.data;
 }
 
-export async function uncompleteTodo(id: number) {
+export async function incompleteTodo(id: number) {
   const response = await axios.put(
-    `${url}/todos/${id}/uncomplete`,
+    `${url}/todos/${id}/incomplete`,
     null,
     getConfig()
   );

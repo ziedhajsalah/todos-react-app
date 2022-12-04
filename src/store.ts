@@ -3,7 +3,7 @@ import {
   getTodos,
   createTodo,
   completeTodo,
-  uncompleteTodo,
+  incompleteTodo,
   deleteTodo,
 } from "./api";
 
@@ -32,7 +32,7 @@ export const useTodosStore = create<TodosState>((set) => ({
     set((state) => ({ todos: [...state.todos, todo] }));
   },
   toggleTodo: async (id, complete) => {
-    const todo = complete ? await completeTodo(id) : await uncompleteTodo(id);
+    const todo = complete ? await completeTodo(id) : await incompleteTodo(id);
     set((state) => {
       const todoToUpdateIndex = state.todos.findIndex((t) => t.id === id);
       return {
