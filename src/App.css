@@ -56,6 +56,15 @@ html {
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout .layout-title .log-out {
+  font-size: 14px;
+  color: var(--cool-grey);
+  align-self: center;
+  cursor: pointer;
 }
 
 .layout .layout-description {

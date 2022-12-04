@@ -44,6 +44,7 @@ export function Todos(): JSX.Element {
       resetForm();
     },
   });
+
   return (
     <Layout title="Todo List">
       <form onSubmit={formik.handleSubmit}>
