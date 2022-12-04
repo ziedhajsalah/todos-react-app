@@ -60,6 +60,7 @@ export function Register(): JSX.Element {
             onChange={formik.handleChange}
             value={formik.values.name}
             placeholder="Full Name"
+            type="text"
           />
         </div>
         <div className="form-field">
