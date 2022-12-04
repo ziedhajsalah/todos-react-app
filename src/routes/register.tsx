@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { FormikErrors, useFormik } from "formik";
 import { register } from "../api";
 import { Button } from "../components/Button";
@@ -41,6 +42,11 @@ export function Register(): JSX.Element {
     },
   });
 
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    if (token) navigate("/");
+  }, [navigate]);
+
   return (
     <Layout
       title="Welcome!"
@@ -77,7 +83,7 @@ export function Register(): JSX.Element {
           />
         </div>
         <div className="link">
-          <a href="/login">Do have an account? Sign in.</a>
+          <Link to="/login">Do have an account? Sign in.</Link>
         </div>
         <Button type="submit">Sign Up</Button>
       </form>
