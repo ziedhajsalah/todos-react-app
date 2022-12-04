@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+html {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+:root {
+  --white: #e1e1e1;
+  --dark-blue-grey: #1f2a4b;
+  --dark-sky-blue: #4a77e5;
+  --cool-grey: #9ea3b2;
+  --cool-grey-two: #a1a4ad;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: markPro;
+  src: url("./Mark-Pro.ttf");
+}
+
+.layout {
+  max-width: 440px;
+  margin: 32px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 32px;
+  font-family: markPro;
+}
+
+.logo {
+  margin-bottom: 24px;
+}
+
+.layout .layout-title {
+  color: var(--dark-blue-grey);
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.layout .layout-description {
+  color: var(--cool-grey-two);
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.form-field {
+  margin: 8px 0;
+}
+
+input {
+  border: none;
+  width: 330px;
+  height: 56px;
+  border-bottom: 1px solid var(--white);
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--dark-sky-blue);
+}
+
+input::placeholder {
+  font-size: 16px;
+  color: var(--cool-grey);
+}
+
+.link {
+  margin: 24px 0 40px;
+}
+
+.link a {
+  font-size: 14px;
+  color: var(--dark-blue-grey);
+}
+
+.link a:visited {
+  color: var(--dark-blue-grey);
+}
+
+button {
+  padding: 8px 134px 8px 135px;
+  border-radius: 4px;
+  border: solid 1px var(--dark-sky-blue);
+  background-color: var(--dark-sky-blue);
+  color: #fff;
+  font-size: 16px;
 }
