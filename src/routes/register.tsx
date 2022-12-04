@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { FormikErrors, useFormik } from "formik";
 import { register } from "../api";
 import { Button } from "../components/Button";
@@ -11,6 +12,7 @@ interface FormValues {
 }
 
 export function Register(): JSX.Element {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -32,6 +34,7 @@ export function Register(): JSX.Element {
           values.password
         );
         window.localStorage.setItem("token", token);
+        navigate("/");
       } catch (error) {
         console.error(error);
       }
